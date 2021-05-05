@@ -1,0 +1,61 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Heim Creative Studio"
+theme = "main"
+paginate = 6
+
+
+# Main Menu
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "What We Do"
+url = "/services/"
+weight = 2
+[[menu.main]]
+name = "Case Studies"
+url = "/case-studies"
+weight = 3
+[[menu.main]]
+name = "Insights"
+url = "/insights"
+weight = 4
+[[menu.main]]
+name = "About The Heim"
+url = "/about"
+weight = 5
+[[menu.main]]
+name = "Contact"
+url = "/contact"
+weight = 6
+
+
+[params]
+blogPageURL = "blog"
+contactLink = "contact"
+copyright = "All right reserved copyright © Heim Creative"
+footerLogo = "images/site-navigation/logo_color.svg"
+formspreeURL = "YOUR FORMSPREE URL"
+googleAnalytics = "YOUR GOOGLE ANALYTICS CODE"
+logo = "images/site-navigation/logo_color.svg"
+
+
+# Social icons
+[[params.social]]
+icon = "fa-facebook-official"
+url = "https://www.facebook.com/"
+weight = 1
+[[params.social]]
+icon = "fa-behance"
+url = "https://www.behance.com/"
+weight = 2
+[[params.social]]
+icon = "fa-pinterest-instagram"
+url = "https://www.instagram.com/heimcreative"
+weight = 3
+[[params.social]]
+icon = "fa-twitter-square"
+url = "https://twitter.com/"
+weight = 4
