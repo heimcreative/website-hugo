@@ -1,0 +1,72 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Heim Creative Studio"
+theme = "main"
+paginate = 6
+
+
+# Main Menu
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "What We Do"
+url = "/services/"
+weight = 2
+[[menu.main]]
+name = "Case Studies"
+url = "/case-studies/"
+weight = 3
+[[menu.main]]
+name = "Insights"
+url = "/insights/"
+weight = 4
+[[menu.main]]
+name = "About The Heim"
+url = "/about/"
+weight = 5
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 6
+
+
+# Sitemap Menu
+[[menu.sitemap]]
+name = "Privacy Policy"
+url = "/privacy-policy/"
+weight = 1
+[[menu.sitemap]]
+name = "Accessibility Statement"
+url = "/accessibility-statement/"
+weight = 2
+
+
+[params]
+blogPageURL = "insights"
+contactLink = "contact"
+copyright = "All right reserved copyright © Heim Creative"
+footerLogo = "images/site-navigation/logo_color.svg"
+formspreeURL = "YOUR FORMSPREE URL"
+googleAnalytics = "YOUR GOOGLE ANALYTICS CODE"
+logo = "images/site-navigation/logo_color.svg"
+
+
+# Social icons
+[[params.social]]
+icon = "fab fa-twitter"
+url = "https://www.twitter.com/"
+weight = 1
+[[params.social]]
+icon = "fab fa-behance"
+url = "https://www.behance.com/"
+weight = 2
+[[params.social]]
+icon = "fab fa-dribbble"
+url = "https://www.dribbble.com/"
+weight = 3
+[[params.social]]
+icon = "fab fa-instagram"
+url = "https://www.instagram.com/heimcreative"
+weight = 5
