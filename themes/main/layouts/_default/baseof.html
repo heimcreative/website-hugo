@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 {{ partial "head.html" . }}
 
 <body>
-  {{ partial "navbar.html" . }}
+  {{ if or (.Params.headerDark) (.IsHome) }}
+    {{ partial "navbar-transparent.html" . }}
+  {{ else }}
+    {{ partial "navbar.html" . }}
+  {{ end }}
   <div id="content">
     <main>
     {{ block "main" . }}{{ end }}

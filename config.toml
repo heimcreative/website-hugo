@@ -16,24 +16,35 @@ url = "/services/"
 weight = 2
 [[menu.main]]
 name = "Case Studies"
-url = "/case-studies"
+url = "/case-studies/"
 weight = 3
 [[menu.main]]
 name = "Insights"
-url = "/insights"
+url = "/insights/"
 weight = 4
 [[menu.main]]
 name = "About The Heim"
-url = "/about"
+url = "/about/"
 weight = 5
 [[menu.main]]
 name = "Contact"
-url = "/contact"
+url = "/contact/"
 weight = 6
 
 
+# Sitemap Menu
+[[menu.sitemap]]
+name = "Privacy Policy"
+url = "/privacy-policy/"
+weight = 1
+[[menu.sitemap]]
+name = "Accessibility Statement"
+url = "/accessibility-statement/"
+weight = 2
+
+
 [params]
-blogPageURL = "blog"
+blogPageURL = "insights"
 contactLink = "contact"
 copyright = "All right reserved copyright © Heim Creative"
 footerLogo = "images/site-navigation/logo_color.svg"
@@ -44,18 +55,18 @@ logo = "images/site-navigation/logo_color.svg"
 
 # Social icons
 [[params.social]]
-icon = "fa-facebook-official"
-url = "https://www.facebook.com/"
+icon = "fab fa-twitter"
+url = "https://www.twitter.com/"
 weight = 1
 [[params.social]]
-icon = "fa-behance"
+icon = "fab fa-behance"
 url = "https://www.behance.com/"
 weight = 2
 [[params.social]]
-icon = "fa-pinterest-instagram"
-url = "https://www.instagram.com/heimcreative"
+icon = "fab fa-dribbble"
+url = "https://www.dribbble.com/"
 weight = 3
 [[params.social]]
-icon = "fa-twitter-square"
-url = "https://twitter.com/"
-weight = 4
+icon = "fab fa-instagram"
+url = "https://www.instagram.com/heimcreative"
+weight = 5

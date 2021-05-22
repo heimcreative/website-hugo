@@ -20,11 +20,12 @@ Header START -->
 
 			<!-- Main Menu START -->
 			 <div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav navbar-nav-scroll ms-auto mx-xl-auto">
+				<ul class="navbar-nav navbar-nav-scroll ms-auto mx-lg-auto">
+					{{ $currentNode := . }}
 					{{ $menu := .Site.Menus.main }}
 					{{ range $index, $element := $menu }}
 					<li class="nav-item">
-					  <a href="{{ $.Site.BaseURL }}{{ .URL }}" class="nav-link">{{ .Name }}</a>
+					  <a href="{{ $.Site.BaseURL }}{{ .URL }}" class="nav-link {{if $currentNode.IsMenuCurrent "main" . }}active{{end}}">{{ .Name }}</a>
 					</li>
 					{{ end }}
 				</ul>

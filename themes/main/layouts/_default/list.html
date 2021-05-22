@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" .}}
+
+
+<!-- =======================
+Section START -->
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+                    {{.Content}}
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Section END -->
+
+{{ end }}

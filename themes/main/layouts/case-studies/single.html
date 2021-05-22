@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<!-- =======================
+Inner intro START -->
+<section class="bg-parallax bg-dark-overlay-2 h-500 vh-md-100 d-flex pb-5" style="background:url({{ .Params.Thumbnail | absURL }}) no-repeat center center; background-size:cover;">
+	<div class="container h-100 position-relative">
+		<div class="row">
+			<div class="col-12 ">
+				<!-- Title -->
+				<div class="text-center mt-5 mt-md-7">
+					<p class="display-8 text-white font-alt fw-normal">{{ .Title }}</p>
+					<h1 class="display-3 text-white mb-4">{{ .Title }}<span class="text-white-stroke d-block"> the beginning</span></h1>
+					<span class="text-white">26th, Jan 2021</span>
+				</div>
+			</div>
+		</div><!-- Row END -->
+
+		<div class="d-none d-xl-flex position-absolute bottom-0 w-100">
+			<!-- Share -->
+			<div class="text-white d-flex me-auto d-none">
+				<h6 class="text-white mt-2 me-4"><i class="fas fa-share-alt me-2"></i>Share on:</h6>
+				<div class="list-group-inline list-unstyled text-primary-hover">
+					<a href="#" class="list-group-item text-white bg-transparent">Facebook</a>
+					<a href="#" class="list-group-item text-white bg-transparent">Twitter</a>
+					<a href="#" class="list-group-item text-white bg-transparent">Dribble</a>
+				</div>
+			</div>
+			<!-- Breadcrumb -->
+			<div class="ms-auto breadcrumb-wrapper--dark">
+				{{ partial "breadcrumbs.html" .}}
+
+			</div>
+
+		</div>
+	</div>
+</section>
+<!-- =======================
+Inner intro END -->
+
+{{ end }}

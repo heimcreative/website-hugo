@@ -1,0 +1,30 @@
+<div class="card mb-4 mb-lg-5 overflow-hidden">
+	<!-- Card image -->
+	<div class="card-img-top rounded overflow-hidden position-relative">
+		<a href="{{ .Permalink }}"><img src="{{ .Params.featureImage | absURL }}" alt="{{ .Title }}"></a>
+	</div>
+	<!-- Card Body -->
+	<div class="card-body py-4 px-0 d-flex align-items-start flex-column">
+		<div class="mb-auto">
+			<div class="card-meta mb-3 d-flex align-items-center flex-row">
+				<!-- Published Date -->
+				<span class="small">{{ .PublishDate.Format "January 2, 2006" }}</span>
+				<!-- Divider -->
+				<span class="mx-2">|</span>
+				<!-- Card Categories -->
+				<div class="text-primary-hover">
+					<div class="tag-list small">
+						{{ with (.GetTerms "tags") }}
+						  {{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle }}</a>{{ end }} &nbsp;
+						{{ end }}				
+					</div>						
+				</div>
+			</div>
+			<h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+			<p>{{ .Description }}</p>
+		</div>
+		<div class="mt-auto">
+			<a href="{{ .Permalink }}" class="btn text-dark btn-sm btn-line">Continue Reading</a>
+		</div>
+	</div>
+</div>

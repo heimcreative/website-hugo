@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" .}}
+
+<!-- =======================
+Portfolio START -->
+{{ $events := .Paginator.Pages }}
+{{ if len $events | gt 3 }}
+<section class="pt-0">
+	<div class="container">
+		<div class="row g-0">
+			{{ range .Paginator.Pages }}
+			<!-- Card item START -->
+			<div class="col-md-6 mt-4 mt-lg-7">
+				<div class="card border-0 rounded-0 bg-transparent"> 
+					<!-- Card Image -->
+					<div class="card-image rounded ms-5 ms-sm-8 overflow-hidden position-relative z-index-9">
+						<a href=""><img class="w-100" src="{{ .Params.Thumbnail | absURL }}" alt="{{ .Title}}" /></a>
+						<!-- Card Overlay duplicate-->
+						<div class="card-img-overlay d-flex flex-column ms-n5 ms-sm-n8">	
+							<div class="card-text mt-2 mt-md-6">
+								<p class="display-9 mb-0 text-white font-alt fw-normal">{{ .Params.projectType }}</p>
+								<h5 class="display-8 display-lg-7 text-white-stroke">{{ .Title }}</h5>
+							</div>
+						</div>
+					</div>
+					<!-- Card Overlay -->
+					<div class="card-img-overlay d-flex flex-column">
+						<div class="card-text mt-2 mt-md-6">
+							<p class="display-9 mb-0 text-body font-alt fw-normal">{{ .Params.projectType }}</p>
+							<h5 class="display-8 display-lg-7 text-dark-stroke">{{ .Title }}</h5>
+							<a href="{{ .Permalink }}" class="btn btn-primary btn-line btn-sm position-relative z-index-9 card-element-hover">View Project</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+			{{end}}
+			{{ partial "pagination" .}}
+
+		</div><!-- row END -->
+	</div>
+</section>
+
+{{ else }}
+
+<section class="pt-0 text-center">
+	<h2>No case studies available.</h2>
+</section>
+
+{{ end }}
+
+<!-- =======================
+Portfolio END -->
+
+{{ end }}

@@ -1,0 +1,41 @@
+{{ with .Site.Data.homeHero }}
+{{ if .enable }}
+
+<!-- =======================
+Services START -->
+<section class="bg-light">
+	<div class="container">
+		<div class="row text-center py-3">
+			<h3 class="display-5">We can help. Here's how:</h3>
+		</div>
+		<div class="row py-5">
+			<!-- Service item -->
+			<div class="col-md-4 mb-4">
+				<i class="display-6 text-primary bi bi-sliders"></i>
+				<h4 class="my-3">Brainstorming</h4>
+				<p>You need to get more done. We can add people to your team or provide expert consulting.</p>
+			</div>
+			<!-- Service item -->
+			<div class="col-md-4 mb-4">
+				<i class="display-6 text-primary bi bi-droplet-half"></i>
+				<h4 class="my-3">Accessibility</h4>
+				<p>Your site isn’t accessible and you’re worried about a lawsuit. We can find and fix accessibility issues.</p>
+			</div>
+			<!-- Service item -->
+			<div class="col-md-4 mb-4">
+				<i class="display-6 text-primary bi bi-graph-up"></i>
+				<h4 class="my-3">Website Maintenance</h4>
+				<p>You need to make your website (and budget) last. We can maintain your site and help you invest wisely in improvements.</p>
+			</div>
+		</div>
+		<div class="h6 text-center">
+			<a href="/services/">More Reasons to Hire Us <i class="bi bi-arrow-right"></i></a>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Services END -->
+
+
+{{ end }}
+{{ end }}
