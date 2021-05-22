@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://heimcreative.web.app/"
 languageCode = "en-us"
 title = "Heim Creative Studio"
 theme = "main"
