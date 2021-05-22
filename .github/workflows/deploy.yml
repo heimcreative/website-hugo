@@ -15,11 +15,11 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Build Hugo
-        uses: lowply/build-hugo@v0.75.1
+        uses: lowply/build-hugo@v0.72.0
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@main
         with:
           args: deploy --only hosting
         env:
