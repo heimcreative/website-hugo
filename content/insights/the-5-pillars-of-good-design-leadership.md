@@ -1,6 +1,8 @@
 ---
 title: "The 5 Pillars Of Good Design Leadership"
 date: 2021-05-15
+draft: false
+
 featureImage: images/about/08.jpg
 postImage: images/about/08.jpg
 type: "insights"

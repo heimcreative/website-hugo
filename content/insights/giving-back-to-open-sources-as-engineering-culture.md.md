@@ -1,6 +1,8 @@
 ---
 title: "Giving Back to Open Source as Engineering Culture"
 date: 2021-05-01
+draft: false
+
 featureImage: images/about/08.jpg
 postImage: images/about/08.jpg
 type: "insights"
