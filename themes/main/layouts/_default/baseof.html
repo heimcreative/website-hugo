@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en-US">
-{{ partial "head.html" . }}
+<html lang="{{ site.LanguageCode | default `en-US` }}">
 
-<body>
-  {{ if or (.Params.headerDark) (.IsHome) }}
-    {{ partial "navbar-transparent.html" . }}
-  {{ else }}
-    {{ partial "navbar.html" . }}
-  {{ end }}
-  <div id="content">
-    <main>
-    {{ block "main" . }}{{ end }}
-    </main>
-  </div>
-  {{ partial "footer.html" . }}
-</body>
+	<head>
+		{{ partial "head.html" . }}
+		{{ partialCached "style.html" . }}
+		<base href="{{ .Site.BaseURL }}">
+	</head>
+
+	<body>
+		{{ if or (.Params.headerDark) (.IsHome) }}
+			{{ partial "navbar-transparent.html" . }}
+	   	{{ else }}
+			{{ partial "navbar.html" . }}
+		{{ end }}
+		<main>
+			{{ block "main" . }}{{ end }}
+		</main>
+		{{ partial "footer.html" . }}
+		<!-- {{ partialCached "script.html" . }} -->
+	</body>
 
 </html>

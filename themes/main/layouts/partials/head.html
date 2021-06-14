@@ -1,12 +1,12 @@
-<head>
-     <meta charset="utf-8" />
-     <title>{{ .Title }}</title>
-   
-     {{ "<!-- mobile responsive meta -->" | safeHTML }}
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-   
-     {{ "<!-- Font Awesome -->" | safeHTML }}
+<meta charset="utf-8">
+<title>{{with .Title}}{{.}} | {{site.Title}}{{else}}{{site.Title}}{{.Title}}{{end}}</title>
+
+<meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{ end }}
+
       <!-- Google Font -->
       <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Rubik:wght@400;500;700&family=Spartan:wght@400;700;900&display=swap" rel="stylesheet">
 
@@ -22,15 +22,6 @@
    
      {{ "<!--Favicon-->" | safeHTML }}
      <link rel="icon" href="{{ "images/favicon.svg" | absURL }}" />
-     {{ with site.Params.googleAnalytics }}
-     {{ "<!-- Google Analytics -->" | safeHTML }}
-     <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
-     <!-- <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag() { dataLayer.push(arguments); }
-       gtag('js', new Date());
-   
-       gtag('config', '{{ . }}');
-     </script> -->
-     {{ end }}
-   </head>
+
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}

@@ -25,17 +25,29 @@
 	    <!-- End Nav List -->
 	  </div>
    
-	  <div class="col-12 col-lg-3 text-center text-lg-end mt-3 mt-lg-0">
+	  <div class="col-12 col-lg-3 text-center text-lg-end mt-2 mt-lg-0">
 	    <!-- Social Networks -->
 		<ul class="list-inline mb-0">
-			{{ $social := .Site.Params.social }}
-			{{ range $social }}
 			<li class="list-inline-item">
-				<a class="btn m-0" target="_blank" href="{{ .url }}">
-					<i class="{{ .icon }}"></i>
+				<a class="btn btn-sm m-0" target="_blank" href="https://">
+					<i class="fab fa-twitter"></i>
 				</a>
 			</li>
-			{{ end }}
+			<li class="list-inline-item">
+				<a class="btn btn-sm m-0" target="_blank" href="https://">
+					<i class="fab fa-instagram"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="btn btn-sm m-0" target="_blank" href="https://">
+					<i class="fab fa-behance"></i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="btn btn-sm m-0" target="_blank" href="https://">
+					<i class="fab fa-dribbble"></i>
+				</a>
+			</li>
 		</ul>
 	    <!-- End Social Networks -->
 	  </div>

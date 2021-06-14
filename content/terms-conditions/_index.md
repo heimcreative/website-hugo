@@ -1,8 +1,8 @@
 ---
-title: "What We Do"
+title: "Terms of Service"
 subtitle: ""
 # meta description
-description: "Services at Heim Creative"
+description: "This is meta description"
 draft: false
 ---
 

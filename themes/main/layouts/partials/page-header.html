@@ -1,0 +1,57 @@
+{{ if or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags") )}}
+
+<section class="py-3">
+	<div class="container">
+		<div class="row d-flex justify-content-lg-between">
+      <nav aria-label="breadcrumb" class="d-flex justify-content-start">
+        <ol class="breadcrumb align-items-center">
+          <li class="breadcrumb-item"><a href="{{ .Site.BaseURL }}">Home</a></li>
+          {{ template "breadcrumb" dict "currentPage" .Page "perma" .Permalink }}
+        </ol>
+      </nav>
+			<div class="col-12 col-md-10 mx-auto">
+				<h1 class="h2 m-0">{{ .Title | markdownify }}</h1>
+        {{ with .Params.subtitle }}
+        <p class="lead">{{ . | markdownify }}</p>
+        {{ end }}
+			</div>
+		</div>
+	</div>
+</section>
+
+{{ else }}
+
+<section class="py-3">
+	<div class="container">
+		<div class="row d-flex justify-content-lg-between">
+      <nav aria-label="breadcrumb" class="d-flex justify-content-start">
+        <ol class="breadcrumb align-items-center">
+          <li class="breadcrumb-item"><a href="{{ .Site.BaseURL }}">Home</a></li>
+          {{ template "breadcrumb" dict "currentPage" .Page "perma" .Permalink }}
+        </ol>
+      </nav>
+			<div class="col-12 col-md-10 mx-auto">
+				<h1 class="m-0">{{ .Title | markdownify }}</h1>
+        {{ with .Params.subtitle }}
+        <p class="lead">{{ . | markdownify }}</p>
+        {{ end }}
+			</div>
+		</div>
+	</div>
+</section>
+{{ end }}
+
+
+<!-- templates -->
+{{ define "breadcrumb" }}
+  {{ if .currentPage.Parent }}
+  {{ if ne .currentPage.Parent .IsHome }}
+    {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+  {{ end }}
+    {{ if eq .perma .currentPage.Permalink }}
+    <li class="breadcrumb-item active">{{ .currentPage.Title }}</li>
+    {{ else }}
+    <li class="breadcrumb-item " aria-current="page"><a href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a></li>
+    {{ end }}
+{{ end }}
+{{ end }}

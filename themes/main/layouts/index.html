@@ -1,17 +1,143 @@
 {{ define "main" }}
 
-{{ partial "home/hero.html" . }}
+<!-- hero -->
+{{ with .Params.hero }}
+<!-- =======================
+Hero section START -->
+<section class="bg-dark py-7 py-md-9 overflow-hidden position-relative" style="background-image:url({{ .image }}); background-position: center center; background-size: cover;">
+	<div class="d-flex position-absolute top-0 bottom-0 w-100 h-100">
+		<div class="w-50 h-100 bg-dark-overlay-3"></div>
+		<div class="w-50 h-100 bg-primary-multiply"></div>
+	</div>
+	<div class="container position-relative z-index-9">
+		<div class="row">
+			<div class="col-lg-8">
+				<h1 class="text-uppercase text-white display-2 lh-1">{{ .title | safeHTML }}</h1>
+				<p class="display-8 fw-normal text-white">{{ .content | markdownify }}</p>
+        {{ if .button.enable }}
+        {{ with .button }}
+        <a href="{{ .link | safeURL }}" title="{{ .label }}" class="btn btn-lg btn-primary mt-5">{{ .label }}</a>
+        {{ end }}
+        {{ end }}
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Hero section END -->
+{{ end }}
 
-{{ partial "home/services.html" . }}
 
-{{ partial "home/case-study-section.html" . }}
+{{ with .Params.services }}
+{{ if .enable }}
+<!-- =======================
+Services START -->
+<section class="bg-light">
+	<div class="container">
+		<div class="row text-center py-3">
+			<h3 class="display-5">{{ .title | markdownify }}</h3>
+		</div>
+		<div class="row py-5">
+      {{ range .services_item }}
+			<div class="col-md-4 mb-4">
+				<i class="display-6 text-primary {{.icon}}"></i>
+				<h4 class="my-3">{{ .name | title }}</h4>
+        <p>{{ .content | markdownify }}</p>
+			</div>
+      {{ end }}
+		</div>
+		<div class="h6 text-center">
+			<a href="/services/">More Reasons to Hire Us <i class="bi bi-arrow-right"></i></a>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Services END -->
+{{ end }}
+{{ end }}
 
-<!-- {{ partial "home/work-process.html" . }} -->
 
-{{ partial "home/insight-section.html" . }}
 
-{{ partial "home/call-to-action.html" . }}
+<!-- blog -->
+{{ with .Params.blog }}
+{{ if .enable }}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="display-8 m-0">{{ .title }}</h2>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <!-- Card item image START -->
+      <div class="col-lg-8 mx-auto">
+        {{ range first 3 (where $.Site.RegularPages "Section" "blog") }}
+        <div class="card mb-4 mb-lg-5 overflow-hidden">
+          <!-- Card image -->
+          <div class="card-img-top rounded overflow-hidden position-relative">
+            <a href="{{ .Permalink }}"><img src="{{ .Params.image | absURL }}" alt="{{ .Title }}"></a>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body py-4 px-0 d-flex align-items-start flex-column">
+            <div class="mb-auto">
+              <div class="card-meta mb-3 d-flex align-items-center flex-row">
+                <!-- Published Date -->
+                <span class="small">{{ .PublishDate.Format "January 2, 2006" }}</span>
+                <!-- Divider -->
+                <span class="mx-2">|</span>
+                <!-- Card Categories -->
+                <div class="text-primary-hover">
+                  <div class="tag-list small">
+                  {{ with (.GetTerms "tags") }}
+                  {{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle }}</a>{{ end }} &nbsp;
+                  {{ end }}				
+                  </div>						
+                </div>
+              </div>
+              <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+              <p class="text-muted">{{ .Description }}</p>
+            </div>
+            <div class="mt-auto">
+              <a href="{{ .Permalink }}" class="btn text-dark btn-sm btn-line">Continue Reading</a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="btn btn-light btn-small mt-4" href="{{ .buttonTarget | absURL }}">View all insights</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /insights -->
 
-<!-- {{ partial "home/subscribe.html" . }} -->
+<!-- call to action -->
+{{ with .Params.call_to_action }}
+{{ if .enable }}
+<section class="bg-primary py-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="d-md-flex justify-content-center align-items-center">
+					<span class="font-alt fw-normal text-white display-8">{{ .title | markdownify }} —</span>
+					<h4 class="mb-3 mb-md-0 text-white mx-md-4">{{ .content }}</h4>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn btn-outline-white btn-sm mb-0">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /call to action -->
 
 {{ end }}

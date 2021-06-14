@@ -1,8 +1,57 @@
 baseURL = "https://heimcreative.web.app/"
 languageCode = "en-us"
-title = "Heim Creative Studio"
+title = "Heim Creative"
+description = "Heim Creative builds websites and apps that help you publish great content across all devices, platforms, and experiences."
 theme = "main"
-paginate = 6
+
+
+# This file is for render site varibles and plugins
+# don't remove this file.
+# The presence of this file is for compatibility with Blogdown and Forestry.
+#
+# The actual configuration files are stored in the `config/_default/` folder.
+
+
+######################### site variables ##############################
+# customize your color and font from here.
+[params.variables]
+primary_color = "#0AA8A7"
+text_color = "#777"
+text_color_dark = "#222"
+body_color = "#fff"
+border_color = "#ECECEC"
+black = "#000"
+white = "#fff"
+light = "#EDF6F5"
+
+# font variable
+# Give your font name from google font. add font weight using ":wght@" and separate by ";"
+# example: "Work Sans:wght@400;500;600"
+primary_font = "Lato:wght@400"
+primary_font_type = "sans-serif" # [serif/sans-serif]
+icon_font = "Font Awesome 5 Free"
+
+
+############################# Plugins ##############################
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"
+attributes = "crossorigin='anonymous' defer='defer' data-search-pseudo-elements"
+
+
+
 
 
 # Main Menu
@@ -12,61 +61,32 @@ url = "/"
 weight = 1
 [[menu.main]]
 name = "What We Do"
-url = "/services/"
+url = "services"
 weight = 2
 [[menu.main]]
 name = "Case Studies"
-url = "/case-studies/"
+url = "case-studies"
 weight = 3
 [[menu.main]]
 name = "Insights"
-url = "/insights/"
+url = "blog"
 weight = 4
 [[menu.main]]
 name = "About The Heim"
-url = "/about/"
+url = "about"
 weight = 5
 [[menu.main]]
 name = "Contact"
-url = "/contact/"
+url = "contact"
 weight = 6
 
 
 # Sitemap Menu
 [[menu.sitemap]]
 name = "Privacy Policy"
-url = "/privacy-policy/"
+url = "privacy-policy"
 weight = 1
 [[menu.sitemap]]
 name = "Accessibility Statement"
-url = "/accessibility-statement/"
+url = "accessibility-statement"
 weight = 2
-
-
-[params]
-blogPageURL = "insights"
-contactLink = "contact"
-copyright = "All right reserved copyright © Heim Creative"
-footerLogo = "images/site-navigation/logo_color.svg"
-formspreeURL = "YOUR FORMSPREE URL"
-googleAnalytics = "YOUR GOOGLE ANALYTICS CODE"
-logo = "images/site-navigation/logo_color.svg"
-
-
-# Social icons
-[[params.social]]
-icon = "fab fa-twitter"
-url = "https://www.twitter.com/"
-weight = 1
-[[params.social]]
-icon = "fab fa-behance"
-url = "https://www.behance.com/"
-weight = 2
-[[params.social]]
-icon = "fab fa-dribbble"
-url = "https://www.dribbble.com/"
-weight = 3
-[[params.social]]
-icon = "fab fa-instagram"
-url = "https://www.instagram.com/heimcreative"
-weight = 5
