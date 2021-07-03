@@ -26,7 +26,7 @@
       {{ range $paginator.Pages }}
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0">
-          <a href="{{.Permalink}}"><img src="{{ .Params.image |relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-4" /></a>
+          <a href="{{.Permalink}}"><img src="{{ .Params.image |relURL }}" alt="{{ .Title }}" class="rounded mb-4" /></a>
           <div class="card-body p-0">
             <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h4>
             <div>{{ .PublishDate.Format "January 2, 2006" }}</div>

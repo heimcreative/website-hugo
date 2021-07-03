@@ -1,20 +1,18 @@
 {{ if or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags") )}}
 
-<section class="py-3">
+<section class="py-6">
 	<div class="container">
 		<div class="row d-flex justify-content-lg-between">
-      <nav aria-label="breadcrumb" class="d-flex justify-content-start">
+      <nav aria-label="breadcrumb" class="d-flex justify-content-start d-none">
         <ol class="breadcrumb align-items-center">
           <li class="breadcrumb-item"><a href="{{ .Site.BaseURL }}">Home</a></li>
           {{ template "breadcrumb" dict "currentPage" .Page "perma" .Permalink }}
         </ol>
       </nav>
-			<div class="col-12 col-md-10 mx-auto">
-				<h1 class="h2 m-0">{{ .Title | markdownify }}</h1>
-        {{ with .Params.subtitle }}
-        <p class="lead">{{ . | markdownify }}</p>
-        {{ end }}
-			</div>
+			<div class="col-12">
+				<h1 class=" mb-0 mb-md-5">{{ .Title | markdownify }}</h1>
+        <span class="text-muted">{{ .PublishDate.Format "January 2, 2006" }}</span>
+      </div>
 		</div>
 	</div>
 </section>
