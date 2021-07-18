@@ -1,10 +1,12 @@
 {{ define "main" }}
 
+{{ partial "page-header.html" . }}
+
 <!-- checking blog -->
 {{ if or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags") )}}
-{{ partial "page-header.html" . }}
+
 <div  class="position-relative h-md-400" style="padding-top: 36%; background-image: url('{{ .Params.image | relURL }}'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-  <div class="position-absolute top-100 start-50 avatar avatar-xxl text-center translate-middle">
+  <div class="position-absolute top-100 start-50 avatar avatar-xl text-center translate-middle">
     <img src="{{ .Params.arthorImage | relURL }}" class="avatar-img rounded-circle shadow-lg" />
     <span class="small text-muted my-1 d-block">written by</span>
     <span>Will Elder</span>
@@ -28,11 +30,10 @@
 
 <!-- regular page -->
 {{ else }}
-{{ partial "page-header.html" . }}
 <section class="section pt-2 pb-5">
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 mx-auto">
+      <div class="col-12">
         <div class="content">{{ .Content }}</div>
       </div>
     </div>

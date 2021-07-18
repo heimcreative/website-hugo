@@ -1,5 +1,5 @@
 ---
-title: "5 Ways to Create a User-Focused Call to Action"
+title: "Creating a User Focused Call to Action"
 date: 2021-05-08T10:07:21+06:00
 # post image
 image: "images/blog/5-ways-call-to-action.jpg"

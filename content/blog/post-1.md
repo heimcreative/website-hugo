@@ -9,6 +9,7 @@ type: "regular"
 # meta description
 description: "This is meta description"
 tags: "ux design"
+arthorImage: "/images/profile-will-elder.jpg"
 # post draft
 draft: false
 ---
